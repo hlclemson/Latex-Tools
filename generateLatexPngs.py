@@ -90,6 +90,8 @@ def genPNGfromEquation(eq: str):
     imgNum = 1
     # prevent overwritting existing equation image files
     outputDir = "png"
+    if not os.path.exists(outputDir):
+        os.mkdir(outputDir)
     while True:
         if os.path.exists(f"{outputDir}/eq{imgNum}.png"):
             imgNum += 1
